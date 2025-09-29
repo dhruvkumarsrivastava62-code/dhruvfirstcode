@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhruv Shoes</title>
+ 
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      background: #fff;
+      color: #000;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .hero a:hover {
+      background: #e2e2e2;
+    }
+
+    .products {
+      padding: 60px 40px;
+      background: #fff;
+    }
+
+    .products h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer; /* makes it look clickable */
+    }
+
+    .product:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .product h4 {
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      color: #777;
+    }
+
+    .about, .contact {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .about h3, .contact h3 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+
+    /* Keyframes for hero heading */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <h1>DHRUV SHOES</h1>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+      <h2>Step Into Style</h2>
+      <p>Premium shoes crafted for comfort & performance</p>
+      <a href="#products">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h3 data-aos="fade-up">Our Bestsellers</h3>
+    <div class="product-grid">
+      <div class="product" data-aos="zoom-in" data-aos-delay="100">
+        <img src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_3.0/h_300,c_limit/8d73cd25-91cc-48fe-9514-7a41daccb7ef/vomero-plus-road-running-shoes-sBieAqOJ.png" alt="Running Shoe">
+        <h4>Runner X1</h4>
+        <p>₹3,999</p>
+      </div>
+      <div class="product" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBK1WzBAH4LFKWEEYITi1sODvye65PAAN_w&s" alt="Sneakers">
+        <h4>Urban Classic</h4>
+        <p>₹4,499</p>
+      </div>
+      <div class="product" data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://thumblr.uniid.it/product/206057/29a53a5cd421.jpg" alt="Formal Shoe">
+        <h4>Elite Leather</h4>
+        <p>₹5,999</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about" data-aos="fade-right">
+    <h3>About Dhruv Shoes</h3>
+    <p>Founded in 2025, Dhruv Shoes brings you high-quality, stylish, and comfortable footwear designed for everyday champions. Our mission is to keep your feet happy and your style fresh.</p>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-left">
+    <h3>Contact Us</h3>
+    <p>Email: dhruvkumarsrivastava62@gmail.com | Phone: +91-9721886288</p>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Dhruv Shoes. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- Script to open form.htm when clicking product -->
+  <script>
+    document.querySelectorAll('.product').forEach(product => {
+      product.addEventListener('click', () => {
+        window.location.href = "form.htm";
+      });
+    });
+  </script>
+
+</body>
+</html>

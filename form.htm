@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Janardhan Shoes - User Details</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* push form to top, not locked center */
+      min-height: 100vh;        /* allow scrolling */
+      margin: 0;
+      padding: 40px 0;          /* space at top & bottom */
+      overflow-y: auto;         /* enable vertical scrolling */
+    }
+
+    .form-wrapper {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 400px;
+      max-width: 95%;
+      animation: slideIn 1s ease;
+    }
+
+    .form-wrapper h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #6c63ff;
+      box-shadow: 0 0 8px rgba(108,99,255,0.3);
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #6c63ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #5548d3;
+      transform: scale(1.05);
+    }
+
+    /* Popup styles */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s ease;
+      z-index: 1000;
+    }
+
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: popIn 0.6s ease;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .popup-content p {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .close-btn {
+      padding: 10px 20px;
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background: #5548d3;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <h2>Janardhan Shoes - User Details</h2>
+    <form id="userForm">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="">--Select--</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="size">Shoe Size</label>
+        <select id="size" name="size">
+          <option value="">--Select Size--</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="style">Preferred Shoe Style</label>
+        <select id="style" name="style">
+          <option value="">--Select--</option>
+          <option>Running</option>
+          <option>Formal</option>
+          <option>Sneakers</option>
+          <option>Leather</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message or Note</label>
+        <textarea id="message" name="message" placeholder="Any special request or comment..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>🎉 Thank You!</h3>
+      <p>Your details have been submitted successfully. We’ll contact you soon.</p>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('userForm');
+    const popup = document.getElementById('popup');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent actual form submission
+      popup.classList.add('active'); // show popup
+      form.reset(); // clear form
+    });
+
+    function closePopup() {
+      popup.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
